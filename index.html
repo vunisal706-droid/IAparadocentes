@@ -760,10 +760,10 @@ footer{background:rgba(255,255,255,.6)!important}
           <li>Descarga el <code>index.html</code> configurado y sustituye con él al de la carpeta.</li>
           <li>Copia las reglas y publícalas en Firebase (guía 2, último paso).</li>
         </ol>
-        <p class="consejo">Cuadra Horarios, Mis Lecturas, PDF a Markdown y Word y el Troglodita no llevan configuración: úsalos tal cual. ¿Prefieres configurar a mano las demás? Abre el <code>index.html</code> con el Bloc de notas: al principio verás el bloque <code>CONFIGURACIÓN DEL CENTRO</code>. Cambia solo lo que hay entre comillas.</p>
+        <p class="consejo">Cuadra Horarios, Mis Lecturas y PDF a Markdown y Word no llevan configuración: úsalos tal cual. ¿Prefieres configurar a mano las demás? Abre el <code>index.html</code> con el Bloc de notas: al principio verás el bloque <code>CONFIGURACIÓN DEL CENTRO</code>. Cambia solo lo que hay entre comillas.</p>
       </div>
     </details></div>
-  <p style="color:var(--tinta-suave);margin:0 0 16px;max-width:70ch">Todo ocurre en tu navegador: el archivo no se sube a ningún sitio. Cuadra Horarios, Mis Lecturas, PDF a Markdown y Word y el Troglodita no necesitan configuración.</p>
+  <p style="color:var(--tinta-suave);margin:0 0 16px;max-width:70ch">Todo ocurre en tu navegador: el archivo no se sube a ningún sitio. Cuadra Horarios, Mis Lecturas y PDF a Markdown y Word no necesitan configuración.</p>
   <div class="config">
     <div class="paso" data-n="1" id="paso1">
       <h3>Sube la plantilla</h3>
@@ -976,11 +976,6 @@ const APPS = [
     id: 'teletrabajo', nombre: 'Teletrabajo', color: '#3949AB',
     desc: 'Reuniones telemáticas de los órganos colegiados: orden del día, asistencia, aportaciones y votaciones en directo, convocatoria en PDF con QR y ayuda para redactar el acta con IA.',
     usa: 'Realtime Database · Acceso con usuario', descarga: 'descargas/teletrabajo.zip'
-  },
-  {
-    id: 'troglodita', nombre: 'Troglodita de Santa Fe', color: '#8A4B1C',
-    desc: 'Juego de plataformas ambientado en la historia local, en un solo archivo. Un modelo para crear con IA el juego de la historia de tu pueblo.',
-    usa: 'Juego · Sin base de datos', descarga: 'descargas/troglodita.zip'
   },
   {
     id: 'pdfaword', nombre: 'PDF a Markdown y Word', color: '#DC2626',
@@ -1381,7 +1376,7 @@ function cargarPlantilla(file) {
     if (!bloque || !centro) {
       CONF.html = '';
       $('paso1').classList.remove('hecho');
-      estado('est1', 'error', 'Este archivo no tiene el bloque <code>CONFIGURACIÓN DEL CENTRO</code>. Si es Cuadra Horarios, Mis Lecturas, PDF a Markdown y Word o el Troglodita, no necesita configuración: úsalo tal cual. Si es otra app, descarga la plantilla desde la pestaña Las apps.');
+      estado('est1', 'error', 'Este archivo no tiene el bloque <code>CONFIGURACIÓN DEL CENTRO</code>. Si es Cuadra Horarios, Mis Lecturas o PDF a Markdown y Word, no necesita configuración: úsalo tal cual. Si es otra app, descarga la plantilla desde la pestaña Las apps.');
       $('camposCentro').innerHTML = '';
       validar();
       return;
