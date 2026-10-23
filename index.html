@@ -1337,9 +1337,11 @@ const CAMPOS = {
   adminPuesto: { et: 'Cargo de la persona administradora', ej: 'Dirección' },
   adminIdea:   { et: 'Usuario IdEA de la persona administradora', ej: 'abcdef123', ay: 'El usuario de Séneca, nunca la contraseña. Con él se crea su cuenta la primera vez que entra.' },
   enlaceGem:   { et: 'Enlace al Gem de Gemini del centro (opcional)', ej: 'https://gemini.google.com/gem/…', ay: 'Si lo dejas vacío, la app abrirá Gemini normal.' },
-  enlaceGPT:   { et: 'Enlace al GPT del centro (opcional)', ej: 'https://chatgpt.com/g/…', ay: 'Si lo dejas vacío, la app abrirá ChatGPT normal.' }
+  enlaceGPT:   { et: 'Enlace al GPT del centro (opcional)', ej: 'https://chatgpt.com/g/…', ay: 'Si lo dejas vacío, la app abrirá ChatGPT normal.' },
+  secretaria:  { et: 'Nombre de quien ejerce la secretaría (opcional)', ej: 'Nombre Apellidos', ay: 'Aparece en las convocatorias de Claustro que firma la secretaría.' },
+  enlaceAgora: { et: 'Dirección de tu Ágora (opcional)', ej: 'https://tu-usuario.github.io/agora/', ay: 'Para enviar la SdA a Ágora y preparar allí las fichas. Si lo dejas vacío, ese botón te avisará.' }
 };
-const ANCHOS = ['nombre', 'dominio', 'adminIdea', 'enlaceGem', 'enlaceGPT', 'contexto', 'enlaceProblemas', 'director'];
+const ANCHOS = ['nombre', 'dominio', 'adminIdea', 'enlaceGem', 'enlaceGPT', 'contexto', 'enlaceProblemas', 'director', 'secretaria', 'enlaceAgora'];
 const FIREBASE_CLAVES = ['apiKey', 'authDomain', 'databaseURL', 'projectId', 'storageBucket', 'messagingSenderId', 'appId', 'measurementId'];
 const TIPOS_REGLAS = {
   rtdb: { titulo: 'Reglas de Realtime Database', ayuda: 'Pégalas en <code>Realtime Database</code> → <code>Reglas</code>, sustituyendo todo lo que haya, y pulsa <code>Publicar</code>.' },
@@ -1615,14 +1617,14 @@ $('gemSoporte').textContent = GEM_SOPORTE;
 })();
 /* ── Aviso de novedades (una sola vez en cada dispositivo) ── */
 (function () {
-  const ID = 'iaparadocentes-novedades-2026-10-23c';
+  const ID = 'iaparadocentes-novedades-2026-10-23d';
   try { if (localStorage.getItem(ID)) return; } catch (e) { return; }
   const d = document.createElement('div');
   d.setAttribute('role', 'dialog'); d.setAttribute('aria-label', 'Novedades');
   d.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(27,42,78,.45);display:flex;align-items:center;justify-content:center;padding:16px';
   d.innerHTML = '<div style="background:#fff;max-width:440px;width:100%;border-radius:16px;padding:22px 24px;box-shadow:0 20px 50px rgba(0,0,0,.25)">'
     + '<div style="font-family:var(--display);font-size:1.3rem;font-weight:600;margin-bottom:8px">Novedades</div>'
-    + '<p style="margin-bottom:14px">La página de apoyo estrena <b>diseño nuevo</b>. Las apps ahora se descargan directamente, ya sin demostración. Aquí tienes también los 40 prompts del libro, el configurador y las guías.</p>'
+    + '<p style="margin-bottom:14px">La página de apoyo estrena <b>diseño nuevo</b>. Las apps se han <b>actualizado a su última versión</b> y se descargan directamente. Aquí tienes también los 40 prompts del libro, el configurador y las guías.</p>'
     + '<button class="btn azul" style="width:100%">Entendido</button></div>';
   d.querySelector('button').onclick = () => { try { localStorage.setItem(ID, '1'); } catch (e) {} d.remove(); };
   document.body.appendChild(d);
