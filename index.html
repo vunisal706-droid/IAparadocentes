@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
 <style>
 /* Boli azul para actuar, boli rojo para el margen y los avisos, subrayador para lo importante */
@@ -558,23 +559,104 @@ details.activar ol{padding-left:22px;display:grid;gap:6px;margin:8px 0}
   *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
 }
 </style>
+<style id="g-2026">
+/* ══ Diseño 2026 · colorido, misma familia que las apps ══ */
+:root{
+  --f-body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-disp:'Bricolage Grotesque','Figtree',system-ui,sans-serif;
+  --display:var(--f-disp); --texto:var(--f-body);
+  --tinta:#1b2559; --tinta-suave:#5d6488; --ink-2:#3a4372;
+  --azul:#233a8c; --azul-hover:#1a2d73; --azul-claro:#eaeefb;
+  --linea:#e1e6ec; --desk:#eef2f3; --gold:#c9a227;
+  --r-l:20px; --r-m:14px;
+}
+body{font-family:var(--f-body)!important;background:var(--desk)!important;color:var(--tinta);font-size:16px;-webkit-font-smoothing:antialiased;animation:none!important}
+body::before{content:'';position:fixed;inset:-20%;z-index:-1;pointer-events:none;
+  background:radial-gradient(32% 28% at 18% 12%,rgba(19,138,94,.14),transparent 70%),radial-gradient(30% 26% at 88% 16%,rgba(38,104,184,.14),transparent 70%),
+  radial-gradient(36% 30% at 70% 90%,rgba(201,162,39,.14),transparent 70%),radial-gradient(28% 24% at 8% 85%,rgba(196,54,31,.10),transparent 70%),
+  radial-gradient(26% 22% at 50% 50%,rgba(116,68,194,.08),transparent 70%),var(--desk);
+  animation:gDrift 48s ease-in-out infinite alternate}
+@keyframes gDrift{0%{transform:translate3d(0,0,0);filter:hue-rotate(0deg)}50%{transform:translate3d(-3%,2%,0);filter:hue-rotate(18deg)}100%{transform:translate3d(2%,-2%,0);filter:hue-rotate(-14deg)}}
+@media (prefers-reduced-motion:reduce){body::before{animation:none}}
+
+/* cabecera en tarjeta */
+header.cab{max-width:1160px;margin:22px auto 0;padding:24px 28px;background:#fff;border:1px solid var(--linea);border-radius:26px;
+  box-shadow:0 1px 2px rgba(27,37,89,.06),0 30px 60px -40px rgba(27,37,89,.45);position:relative;overflow:hidden;align-items:center;gap:20px}
+header.cab::after{content:'';position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,#1c63c9 0 25%,#138a5e 25% 50%,#e0601a 50% 75%,#7444c2 75% 100%)}
+.marca{display:flex;align-items:center;gap:16px}
+.g-sello{width:58px;height:58px;flex:0 0 58px;border-radius:17px;display:grid;place-items:center;color:#fff;
+  background:linear-gradient(135deg,#748ffc,#233a8c);box-shadow:0 10px 20px -10px #233a8c}
+.g-sello svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.marca h1{font-family:var(--f-disp)!important;font-weight:800!important;letter-spacing:-.03em;color:var(--tinta)}
+.marca p{font-size:.95rem!important;margin-top:2px!important}
+.ponente{font-size:.9rem}
+
+/* pestañas con baldosas de color */
+nav.pestanas{margin-top:18px!important;gap:8px!important;border:0}
+.pestanas-borde{display:none}
+.pestana{background:rgba(255,255,255,.75)!important;border:1px solid var(--linea)!important;border-radius:14px!important;padding:7px 14px 7px 7px!important;
+  display:inline-flex;align-items:center;gap:10px;font-family:var(--f-body)!important;font-weight:700!important;color:var(--ink-2)!important;min-height:46px;
+  transition:background .15s,box-shadow .15s,transform .15s;margin:0!important}
+.pestana:hover{background:#fff!important;transform:translateY(-1px)}
+.pestana[aria-selected="true"]{background:#fff!important;color:var(--tinta)!important;padding-bottom:7px!important;
+  box-shadow:0 0 0 2px var(--t2),0 12px 24px -16px var(--t2)!important}
+.pestana .g-ico{width:32px;height:32px;flex:0 0 32px;padding:6px;border-radius:10px;color:#fff;stroke:currentColor;fill:none;stroke-width:2.1;
+  stroke-linecap:round;stroke-linejoin:round;background:linear-gradient(135deg,var(--t1),var(--t2));box-shadow:0 6px 12px -6px var(--t2)}
+#t-apps{--t1:#4dabf7;--t2:#1c63c9} #t-prompts{--t1:#b197fc;--t2:#7444c2} #t-firebase{--t1:#ffa94d;--t2:#e0601a}
+#t-configurar{--t1:#63e6be;--t2:#0b7379} #t-instalar{--t1:#ff8787;--t2:#c4361f}
+
+/* títulos */
+main{padding-top:28px!important}
+.intro h2{font-family:var(--f-disp)!important;letter-spacing:-.03em;color:var(--tinta)}
+h3.bloque{font-family:var(--f-disp)!important;font-weight:800!important;letter-spacing:-.02em;color:var(--tinta);display:flex;align-items:center;gap:12px}
+h3.bloque::before{content:'';width:12px;height:28px;border-radius:6px;flex:0 0 12px;background:linear-gradient(180deg,var(--b1,#4dabf7),var(--b2,#1c63c9))}
+
+/* tarjetas */
+.ficha,.prompt,.paso,details.guia{border:1px solid var(--linea)!important;border-radius:var(--r-l)!important;background:#fff!important;
+  box-shadow:0 1px 2px rgba(27,37,89,.05),0 18px 36px -30px rgba(27,37,89,.5)}
+.ficha{transition:transform .15s,box-shadow .15s}
+.ficha:hover{transform:translateY(-2px);box-shadow:0 1px 2px rgba(27,37,89,.05),0 26px 40px -28px rgba(27,37,89,.55)}
+.ficha::before{left:0!important;right:0!important;top:0!important;height:6px!important;border-radius:0!important}
+.ficha{overflow:hidden}
+.ficha h3{font-family:var(--f-disp)!important}
+.prompt{border-top:5px solid var(--pc,#7444c2)!important}
+.prompt h4{font-family:var(--f-disp)!important;font-weight:700!important;color:var(--tinta)}
+.prompt pre,pre.codigo{background:#f5f7f9!important;border-color:var(--linea)!important}
+details.guia summary b{font-family:var(--f-disp);font-weight:700}
+details.guia[open]{box-shadow:0 0 0 2px rgba(35,58,140,.12),0 18px 36px -30px rgba(27,37,89,.5)}
+.paso::before{background:linear-gradient(135deg,#748ffc,#233a8c)!important;color:#fff!important;border:0!important;font-family:var(--f-disp)}
+.paso.hecho::before{background:linear-gradient(135deg,#63e6be,#138a5e)!important}
+
+/* botones */
+.btn{border-radius:12px!important;font-family:var(--f-body)!important;font-weight:700!important}
+.btn.azul{background:linear-gradient(135deg,#3b5bdb 0%,#233a8c 60%,#1a2d73 100%)!important;color:#fff!important;box-shadow:0 12px 22px -14px rgba(26,45,115,.9),inset 0 1px 0 rgba(255,255,255,.2)}
+.btn.azul:hover{filter:brightness(1.08)}
+.btn.suave{background:#eaeefb!important;color:#233a8c!important}
+.btn.linea{border-color:#cdd5ef!important;color:#233a8c!important}
+.consejo{border-left-color:var(--gold)!important;background:#fdf8e6!important;border-radius:0 12px 12px 0!important}
+.alerta{border-radius:0 12px 12px 0!important}
+footer{background:rgba(255,255,255,.6)!important}
+@media (max-width:640px){header.cab{margin:12px 12px 0;padding:18px;flex-direction:column;align-items:flex-start}.ponente{text-align:left}
+  .pestana{padding:6px 10px 6px 6px!important;font-size:.88rem}}
+</style>
 </head>
 <body>
 
 <header class="cab">
   <div class="marca">
-    <h1>IA para docentes</h1>
-    <p>Página de apoyo del libro · apps, prompts, configurador y guías</p>
+    <span class="g-sello" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span>
+    <div><h1>IA para docentes</h1>
+    <p>Página de apoyo del libro · apps, prompts, configurador y guías</p></div>
   </div>
   <div class="ponente"><strong>Víctor Manuel Única Salas</strong>Crea tus propias apps y herramientas educativas sin saber programar</div>
 </header>
 
 <nav class="pestanas" role="tablist" aria-label="Secciones">
-  <button class="pestana" role="tab" id="t-apps" aria-controls="panel-apps" data-panel="apps">Las apps</button>
-  <button class="pestana" role="tab" id="t-prompts" aria-controls="panel-prompts" data-panel="prompts">Prompts del libro</button>
-  <button class="pestana" role="tab" id="t-firebase" aria-controls="panel-firebase" data-panel="firebase">Firebase paso a paso</button>
-  <button class="pestana" role="tab" id="t-configurar" aria-controls="panel-configurar" data-panel="configurar">Configurador</button>
-  <button class="pestana" role="tab" id="t-instalar" aria-controls="panel-instalar" data-panel="instalar">Publicar y resolver dudas</button>
+  <button class="pestana" role="tab" id="t-apps" aria-controls="panel-apps" data-panel="apps"><svg class="g-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Las apps</button>
+  <button class="pestana" role="tab" id="t-prompts" aria-controls="panel-prompts" data-panel="prompts"><svg class="g-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg>Prompts del libro</button>
+  <button class="pestana" role="tab" id="t-firebase" aria-controls="panel-firebase" data-panel="firebase"><svg class="g-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 6 6 6 12a6 6 0 0 1-12 0c0-3 2-5 3-7 0 3 2 4 3 4 0-4-1-6 0-9z"/></svg>Firebase paso a paso</button>
+  <button class="pestana" role="tab" id="t-configurar" aria-controls="panel-configurar" data-panel="configurar"><svg class="g-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Configurador</button>
+  <button class="pestana" role="tab" id="t-instalar" aria-controls="panel-instalar" data-panel="instalar"><svg class="g-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><rect x="4" y="17" width="16" height="4" rx="1.5"/></svg>Publicar y resolver dudas</button>
 </nav>
 <div class="pestanas-borde"></div>
 
@@ -1529,16 +1611,25 @@ window.addEventListener('hashchange', () => irA(location.hash.slice(1)));
 irA(location.hash.slice(1) || 'apps', false);
 $('gemSoporte').textContent = GEM_SOPORTE;
 
+
+/* ── Diseño 2026: un color por apartado ── */
+(function () {
+  const PAL = [['#4dabf7','#1c63c9'],['#63e6be','#0b7379'],['#ffa94d','#e0601a'],['#b197fc','#7444c2'],['#ff8787','#c4361f'],['#ffd43b','#c9a227'],['#748ffc','#233a8c'],['#8ce99a','#167a43']];
+  document.querySelectorAll('section.panel').forEach(sec => {
+    sec.querySelectorAll('h3.bloque').forEach((h, i) => { const c = PAL[i % PAL.length]; h.style.setProperty('--b1', c[0]); h.style.setProperty('--b2', c[1]); });
+  });
+  document.querySelectorAll('#recetario .prompts').forEach((g, i) => g.querySelectorAll('.prompt').forEach(p => p.style.setProperty('--pc', PAL[i % PAL.length][1])));
+})();
 /* ── Aviso de novedades (una sola vez en cada dispositivo) ── */
 (function () {
-  const ID = 'iaparadocentes-novedades-2026-10-23';
+  const ID = 'iaparadocentes-novedades-2026-10-23b';
   try { if (localStorage.getItem(ID)) return; } catch (e) { return; }
   const d = document.createElement('div');
   d.setAttribute('role', 'dialog'); d.setAttribute('aria-label', 'Novedades');
   d.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(27,42,78,.45);display:flex;align-items:center;justify-content:center;padding:16px';
   d.innerHTML = '<div style="background:#fff;max-width:440px;width:100%;border-radius:16px;padding:22px 24px;box-shadow:0 20px 50px rgba(0,0,0,.25)">'
     + '<div style="font-family:var(--display);font-size:1.3rem;font-weight:600;margin-bottom:8px">Novedades</div>'
-    + '<p style="margin-bottom:14px">Esta es la <b>página de apoyo del libro</b>: aquí están las apps, los prompts del libro, el configurador y las guías. La web de la formación sigue en su dirección, con las sesiones y los retos.</p>'
+    + '<p style="margin-bottom:14px">La página de apoyo del libro estrena <b>diseño nuevo</b>, más colorido. Aquí tienes las apps, los 40 prompts del libro, el configurador y las guías paso a paso.</p>'
     + '<button class="btn azul" style="width:100%">Entendido</button></div>';
   d.querySelector('button').onclick = () => { try { localStorage.setItem(ID, '1'); } catch (e) {} d.remove(); };
   document.body.appendChild(d);
